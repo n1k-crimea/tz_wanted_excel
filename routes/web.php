@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\RowController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FileUploadController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware('auth.basic')->post('/upload', [FileUploadController::class, 'upload']);
+
+Route::middleware('auth.basic')->get('/rows', [RowController::class, 'index'])->name('rows.index');
