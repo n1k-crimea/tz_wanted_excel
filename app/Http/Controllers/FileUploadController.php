@@ -6,7 +6,6 @@ use App\Http\Requests\FileUploadRequest;
 use App\Jobs\ProcessExcelFile;
 use App\Services\FileUploadService;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class FileUploadController extends Controller
 {

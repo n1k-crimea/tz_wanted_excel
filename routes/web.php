@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth.basic')->post('/upload', [FileUploadController::class, 'upload']);
+Route::middleware('auth.basic')
+    ->post('/upload', [FileUploadController::class, 'upload'])
+    ->name('file.upload');
 
-Route::middleware('auth.basic')->get('/rows', [RowController::class, 'index'])->name('rows.index');
+Route::middleware('auth.basic')
+    ->get('/rows', [RowController::class, 'index'])
+    ->name('rows.index');
